@@ -247,14 +247,14 @@ render_panel() {
   printf "\033[1;36mMODE\033[0m     %s\n" "$current_mode"
   printf "\033[1;36mTASK\033[0m     %s\n" "${current_task:---}"
   echo
-  echo "\033[1;33mRuntime Status\033[0m"
-  printf "  %-12s %s\n" "Mode" "${current_mode:---}"
-  printf "  %-12s %s\n" "Current Action" "${current_action:---}"
-  printf "  %-12s %s\n" "Current Task" "${current_task:---}"
-  printf "  %-12s %s\n" "Executor" "${current_executor:---}"
-  printf "  %-12s %s\n" "Step" "${current_step:---}"
-  printf "  %-12s %s\n" "Started At" "${started_at:---}"
-  printf "  %-12s %s\n" "Source" "${runtime_source:---}"
+  echo "\033[1;33mRuntime Status / 运行时状态\033[0m"
+  printf "  %-24s %s\n" "Mode / 模式" "${current_mode:---}"
+  printf "  %-24s %s\n" "Current Action / 当前动作" "${current_action:---}"
+  printf "  %-24s %s\n" "Current Task / 当前任务" "${current_task:---}"
+  printf "  %-24s %s\n" "Executor / 执行者" "${current_executor:---}"
+  printf "  %-24s %s\n" "Step / 当前步骤" "${current_step:---}"
+  printf "  %-24s %s\n" "Started At / 开始时间" "${started_at:---}"
+  printf "  %-24s %s\n" "Source / 来源" "${runtime_source:---}"
   echo
   echo "\033[1;33mProblems\033[0m"
 

@@ -203,9 +203,9 @@ render_no_task() {
   echo "\033[90m窗口 5 只追踪 current task；没有 active execution task 时不回退到会议正文或旧任务\033[0m"
   echo
   print_rule
-  print_row "Task" "none" "当前没有处于 queued/in_progress/blocked 的执行任务"
-  print_row "Mode" "${current_work_mode:-meeting}" "current_task_id 未设置"
-  print_row "Meeting" "$( [[ "$meeting_id" != "none" ]] && echo LINKED || echo -- )" "id=${meeting_id}"
+  print_row "Task / 任务" "none" "当前没有处于 queued/in_progress/blocked 的执行任务"
+  print_row "Mode / 模式" "${current_work_mode:-meeting}" "current_task_id 未设置"
+  print_row "Meeting / 会议" "$( [[ "$meeting_id" != "none" ]] && echo LINKED || echo -- )" "id=${meeting_id}"
   print_rule
   echo
   echo "当前 action 已转换完成；等待新的执行任务被激活。"
@@ -252,17 +252,17 @@ render_task_status() {
   echo "\033[90m窗口 5 只显示当前执行对象；会议产物留在窗口 4 的 action registry\033[0m"
   echo
   print_rule
-  print_row "Task" "${task_id:-none}" "${summary:-No task summary}"
-  print_row "Status" "${task_status:---}" "source_action=${source_action_id:---}"
-  print_row "Owner" "${assigned_to:---}" "handoff_to=${handoff_to:---}"
-  print_row "Mode" "${current_work_mode:-execution}" "current_task only"
-  print_row "Meeting" "$( [[ -n "$linked_meeting_id" ]] && echo LINKED || echo -- )" "id=${linked_meeting_id:-none}"
-  print_row "Task JSON" "$(file_state "workspace/shared/tasks/${task_id}.json")" "${file#$BASE/}"
-  print_row "Primary Input" "$( [[ -n "$input_file" ]] && file_state "$input_file" || echo -- )" "${input_file:---}"
-  print_row "Primary Output" "$output_status" "${output_file:---}"
-  print_row "Handoff" "$( [[ -n "$handoff_file" ]] && echo OK || echo -- )" "$(display_path "$handoff_file")"
-  print_row "QA Report" "$( [[ -n "$qa_report_file" ]] && echo OK || echo -- )" "$(display_path "$qa_report_file")"
-  print_row "Decision" "$( [[ -n "$decision_file" ]] && echo OK || echo -- )" "$(display_path "$decision_file")"
+  print_row "Task / 任务" "${task_id:-none}" "${summary:-No task summary}"
+  print_row "Status / 状态" "${task_status:---}" "source_action=${source_action_id:---}"
+  print_row "Owner / 负责人" "${assigned_to:---}" "handoff_to=${handoff_to:---}"
+  print_row "Mode / 模式" "${current_work_mode:-execution}" "current_task only"
+  print_row "Meeting / 会议" "$( [[ -n "$linked_meeting_id" ]] && echo LINKED || echo -- )" "id=${linked_meeting_id:-none}"
+  print_row "Task JSON / 任务文件" "$(file_state "workspace/shared/tasks/${task_id}.json")" "${file#$BASE/}"
+  print_row "Primary Input / 主输入" "$( [[ -n "$input_file" ]] && file_state "$input_file" || echo -- )" "${input_file:---}"
+  print_row "Primary Output / 主输出" "$output_status" "${output_file:---}"
+  print_row "Handoff / 交接" "$( [[ -n "$handoff_file" ]] && echo OK || echo -- )" "$(display_path "$handoff_file")"
+  print_row "QA Report / 验证报告" "$( [[ -n "$qa_report_file" ]] && echo OK || echo -- )" "$(display_path "$qa_report_file")"
+  print_row "Decision / 裁定" "$( [[ -n "$decision_file" ]] && echo OK || echo -- )" "$(display_path "$decision_file")"
   print_rule
 }
 
