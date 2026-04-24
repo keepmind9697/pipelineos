@@ -1,5 +1,7 @@
 # Public Private Boundary Map v0.1
 
+中文说明：本文件划分哪些资产应进入公开仓库，哪些必须留在私有工作区。
+
 ## Status
 
 - Owner: Executor (Codex)
@@ -11,7 +13,11 @@
 
 This document maps what belongs in the public GitHub repo and what must remain inside the private workspace.
 
+中文理解：目标是把“可复用产品内核”和“私有协作痕迹”明确切开。
+
 ## Public: Include
+
+中文说明：以下内容可以进入公开仓库。
 
 ### Protocol Assets
 
@@ -43,6 +49,8 @@ This document maps what belongs in the public GitHub repo and what must remain i
 
 ## Private: Exclude
 
+中文说明：以下内容必须排除，不得直接公开。
+
 ### Historical Workspace State
 
 - real meeting transcripts
@@ -71,7 +79,11 @@ If an internal asset is conceptually important but context-sensitive, it should 
 2. reproduced as a clean example
 3. not copied verbatim
 
+中文理解：重要但带上下文的内部资产，应先抽象成协议，再生成干净示例，不能原样复制。
+
 ## Export Strategy
+
+中文说明：导出时按三类处理，而不是统一打包。
 
 ### Export as-is
 
@@ -100,3 +112,5 @@ The GitHub repo should be built from:
 - clean demo fixtures
 
 It should not be built by copying the current workspace root.
+
+中文结论：公开仓库应由协议产物、运行时安全脚本和 clean demo 组成，而不是从当前 workspace 根目录直接复制。
