@@ -2,7 +2,9 @@
 
 **A file-protocol multi-agent workflow runtime.**
 
-PipelineOS lets multiple AI agents collaborate on complex tasks through a shared file protocol — using meeting state to manage collaboration, an action registry to track decisions, priority scheduling to select the current task, and built-in failure recovery to handle blocking and stagnation.
+PipelineOS is a file-based coordination layer for multiple AI agents.
+Instead of relying on separate chat histories, agents collaborate through a shared workspace: meeting state, action registry, runtime briefing, selector results, and validation reports. This lets the system coordinate decisions, choose the next executable task, and recover from blocked or stale work.
+For Chinese readers, see [`docs/glossary.zh-CN.md`](docs/glossary.zh-CN.md) for terminology notes.
 
 ---
 
@@ -20,10 +22,15 @@ PipelineOS solves this with a simple file-based protocol. Agents read and write 
 
 ## The v0.1 loop
 
-Clone this repo and you should be able to trace one complete loop:
+The demo shows one complete coordination loop:
 
 ```
-meeting → action registry → task-pool audit → runtime briefing → selector result
+meeting notes
+→ accepted actions
+→ task-pool audit
+→ runtime briefing
+→ selected current task
+→ validator report
 ```
 
 Start here: [`runtime/examples/demo-v0.1/README.md`](runtime/examples/demo-v0.1/README.md)
@@ -50,8 +57,8 @@ PipelineOS/
 ├── runtime/
 │   ├── tools/             # Runnable runtime scripts
 │   │   ├── task-pool-audit.py         # Read-only task pool auditor
-│   │   ├── pipeline-meeting-view.sh   # Window 4: meeting control view
-│   │   └── pipeline-file-view.sh      # Window 5: file view
+│   │   ├── pipeline-meeting-view.sh   # Window 4: runtime control panel
+│   │   └── pipeline-file-view.sh      # Window 5: current execution view
 │   └── examples/
 │       └── demo-v0.1/     # Clean end-to-end demo fixture
 └── BUILD_MANIFEST.md
@@ -66,7 +73,7 @@ PipelineOS/
 | **Meeting** | A structured collaboration session with agenda, decisions, and actions |
 | **Action Registry** | The authoritative list of decisions with priority and state |
 | **Runtime Briefing** | The narrow entry point for any new agent joining the system |
-| **Current Task Selector** | Picks the next task from `priority=high, state=READY` actions only |
+| **Current Task Selector** | Picks the next executable task from ready actions using priority and scheduling rules |
 | **Validator** | A read-only node that outputs `qa-report` — never touches state |
 | **Node types** | Three roles: production (generates), verification (validates), scheduling (controls) |
 
@@ -99,6 +106,8 @@ See [`docs/protocol/failure-recovery.md`](docs/protocol/failure-recovery.md).
 ---
 
 ## Getting started
+
+Run commands from the repository root.
 
 **To explore the protocol:**
 ```
