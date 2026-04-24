@@ -1,0 +1,12 @@
+{
+  "meeting_id": "demo-v0.1",
+  "date": "2026-04-24",
+  "host": "PipelineOS Demo Runtime",
+  "phase": "execution",
+  "problems": [
+    "Demonstrate a clean control loop with one safe selectable task"
+  ],
+  "recent_events": [
+    "RUNTIME | 2026-04-24 | Demo setup | Demo current-state and selector result generated"
+  ]
+}

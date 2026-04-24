@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "generated_at": "2026-04-24T18:00:00+08:00",
+    "active_meeting_id": "demo-v0.1",
+    "total_files_seen": 1,
+    "parseable_tasks": 1,
+    "unparseable_files": 0,
+    "queued_count": 0,
+    "in_progress_count": 1,
+    "ready_for_qa_count": 0,
+    "stale_count": 0,
+    "duplicate_count": 0,
+    "orphan_count": 0,
+    "unsafe_count": 0,
+    "live_candidate_count": 1
+  },
+  "live_candidates": [
+    {
+      "task_id": "task-demo-001",
+      "source_meeting_id": "demo-v0.1",
+      "source_action_id": "A1",
+      "status": "in_progress",
+      "priority": "high",
+      "working_scope": "runtime/examples/demo-v0.1",
+      "why_live": "Single clean demo task linked to the active meeting and active action.",
+      "selection_eligible": true,
+      "selection_blockers": []
+    }
+  ],
+  "stale_tasks": [],
+  "duplicate_groups": [],
+  "orphan_tasks": [],
+  "unsafe_tasks": [],
+  "recommended_actions": [
+    {
+      "action_id": "demo-audit-001",
+      "action_type": "none",
+      "target_scope": "task-demo-001",
+      "reason": "Demo live task is already safe for selector use.",
+      "priority": "high",
+      "owner_role": "runtime",
+      "destructive": false,
+      "requires_human_review": false
+    }
+  ]
+}

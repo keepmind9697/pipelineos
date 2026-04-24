@@ -1,0 +1,71 @@
+{
+  "runtime_identity": {
+    "generated_at": "2026-04-24T18:00:00+08:00",
+    "generated_by": "PipelineOS Demo Runtime",
+    "briefing_version": "v0.1",
+    "active_runtime_mode": "execution"
+  },
+  "current_control_state": {
+    "current_meeting_id": "demo-v0.1",
+    "current_phase": "execution",
+    "current_mode": "execution",
+    "current_action_id": "A1",
+    "current_task_id": "task-demo-001",
+    "current_executor": "executor",
+    "current_step": "run-demo-selector",
+    "started_at": "2026-04-24T18:00:00+08:00",
+    "current_task_status": "in_progress",
+    "current_blocker": "",
+    "system_health": "stable"
+  },
+  "current_meeting": {
+    "meeting_id": "demo-v0.1",
+    "meeting_state_path": "runtime/examples/demo-v0.1/04-state.json",
+    "agenda_path": "runtime/examples/demo-v0.1/00-agenda.md",
+    "discussion_path": "",
+    "decisions_path": "",
+    "actions_path": "runtime/examples/demo-v0.1/action-registry.json",
+    "why_current": "Demo current-state points to the clean example loop."
+  },
+  "action_registry_pointer": {
+    "registry_path": "runtime/examples/demo-v0.1/action-registry.json",
+    "registry_status": "active",
+    "active_actions": ["A1"],
+    "ready_actions": ["A1"],
+    "linked_actions": ["A1 -> task-demo-001"],
+    "selection_policy_summary": "Single high-priority READY action is available and linked to one live task."
+  },
+  "visible_task_pool": {
+    "audit_report_path": "runtime/examples/demo-v0.1/task-pool-audit-report.json",
+    "live_candidate_source": "runtime/examples/demo-v0.1/task-pool-audit-report.json",
+    "live_candidate_count": 1,
+    "current_selector_scope": "Selector may consume the single live candidate.",
+    "suppressed_categories": [],
+    "notes": "This is a clean demo task pool with no stale, duplicate, orphan, or unsafe entries."
+  },
+  "blocked_zones": {
+    "do_not_use_as_entry": [],
+    "do_not_mutate_without_runtime_or_user": [],
+    "historical_only": [],
+    "proposal_only": []
+  },
+  "recommended_next_actions": [
+    {
+      "action_id": "A1",
+      "summary": "Run the selector and confirm task-demo-001 is selected.",
+      "priority": "high",
+      "owner_role": "runtime",
+      "why_now": "All selector inputs are clean and complete.",
+      "depends_on": [],
+      "safe_to_execute_now": true
+    }
+  ],
+  "source_map": {
+    "pipeline_state_path": "",
+    "meeting_state_path": "runtime/examples/demo-v0.1/04-state.json",
+    "action_registry_path": "runtime/examples/demo-v0.1/action-registry.json",
+    "audit_report_path": "runtime/examples/demo-v0.1/task-pool-audit-report.json",
+    "runtime_spec_path": "docs/protocol/runtime-spec.md",
+    "decision_sources": []
+  }
+}

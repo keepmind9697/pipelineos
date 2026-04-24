@@ -1,0 +1,23 @@
+{
+  "meeting_id": "demo-v0.1",
+  "generated_at": "2026-04-24T18:00:00+08:00",
+  "priority_selection_policy": {
+    "version": "v0.1",
+    "rule": "current_task 只能从 priority=high 且 state=READY 的 action 中选取。当无 high 时，才允许从 medium 中选。",
+    "state_for_auto_selection": ["READY"],
+    "state_excluded_from_selection": ["OPEN", "DONE", "BLOCKED", "LINKED"],
+    "priority_order": ["high", "medium"],
+    "low_policy": "low 不进入自动选择"
+  },
+  "entries": [
+    {
+      "action_id": "A1",
+      "title": "Generate demo selector result",
+      "priority": "high",
+      "state": "READY",
+      "owner_role": "executor",
+      "linked_task_id": "task-demo-001",
+      "notes": "Clean demo action eligible for automatic selection."
+    }
+  ]
+}
